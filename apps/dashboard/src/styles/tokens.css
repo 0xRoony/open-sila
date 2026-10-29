@@ -1,0 +1,200 @@
+/* Brand: the only place raw colours live. */
+:root {
+  --ink-950: #07080c;
+  --ink-900: #0e1016;
+  --ink-850: #13161e;
+  --ink-800: #191c26;
+  --ink-750: #20242f;
+  --ink-700: #292e3b;
+  --ink-600: #383e4f;
+  --ink-500: #5f667b;
+  --ink-400: #8b92a6;
+  --ink-300: #b4bacb;
+  --ink-200: #d8dce6;
+  --ink-100: #eceef3;
+  --ink-50: #f6f7f9;
+  --white: #ffffff;
+
+  --ember: #ff6a3d;
+  --ember-deep: #c2410c;
+  --ember-fill: #cf4718;
+  --ember-fill-hover: #bd3f13;
+  --signal: #45d0f0;
+  --signal-deep: #0b7894;
+
+  --discord: #5865f2;
+  --telegram: #2aabee;
+
+  --font-sans: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", "Cascadia Code", ui-monospace, Consolas, monospace;
+
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-md: 13px;
+  --text-base: 14px;
+  --text-lg: 17px;
+  --text-xl: 24px;
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 14px;
+  --radius-pill: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --stroke: 1.5px;
+  --wire: 2px;
+
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --fast: 120ms;
+  --base: 200ms;
+
+  --font-size: var(--text-base);
+  --font-size-sm: var(--text-md);
+  --font-size-xs: var(--text-sm);
+  --control-height: 32px;
+  --topbar-height: 52px;
+  --bar-height: 28px;
+  --panel-head: 36px;
+}
+
+/* Semantic: dark is the default theme. */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: var(--ink-900);
+  --surface: var(--ink-850);
+  --raised: var(--ink-800);
+  --hover: var(--ink-750);
+  --sunken: var(--ink-950);
+  --line: var(--ink-700);
+  --line-strong: var(--ink-600);
+  --control-line: #626a80;
+  --fg: var(--ink-100);
+  --fg-soft: var(--ink-300);
+  --muted: var(--ink-400);
+  --overlay: rgb(7 8 12 / 0.72);
+  --shadow: 0 8px 24px rgb(0 0 0 / 0.4);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.35);
+  --shadow-lg: 0 18px 48px rgb(0 0 0 / 0.5), 0 2px 6px rgb(0 0 0 / 0.3);
+  --grid-dot: var(--ink-700);
+
+  --focus: var(--signal);
+  --live: var(--ember);
+  --danger: #f2555a;
+  --warning: #f2c14e;
+  --success: #34d39b;
+  --info: var(--signal);
+
+  --trigger: #f2c14e;
+  --action: #5b8cff;
+  --logic: #a77bff;
+  --data: #34d39b;
+  --code: #ff7ab6;
+
+  --t-exec: #e9ebf2;
+  --t-string: #f29e6d;
+  --t-number: #7fd1c7;
+  --t-boolean: #e66a6a;
+  --t-user: #8fa8ff;
+  --t-member: #b3a1ff;
+  --t-channel: #6fcf73;
+  --t-message: #f2d46b;
+  --t-role: #f28fd0;
+  --t-guild: #5fb8ff;
+  --t-list: #d6b97a;
+  --t-any: #9097ab;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: var(--ink-50);
+  --surface: var(--white);
+  --raised: var(--ink-100);
+  --hover: var(--ink-100);
+  --sunken: #fbfbfc;
+  --line: var(--ink-200);
+  --line-strong: #c4c9d6;
+  --control-line: #878ea1;
+  --fg: var(--ink-900);
+  --fg-soft: #343a4c;
+  --muted: var(--ink-500);
+  --overlay: rgb(14 16 22 / 0.35);
+  --shadow: 0 8px 24px rgb(14 16 22 / 0.1);
+  --shadow-sm: 0 1px 2px rgb(14 16 22 / 0.08);
+  --shadow-lg: 0 18px 48px rgb(14 16 22 / 0.16), 0 2px 6px rgb(14 16 22 / 0.08);
+  --grid-dot: var(--ink-200);
+
+  --focus: var(--signal-deep);
+  --live: var(--ember-deep);
+  --danger: #d63c41;
+  --warning: #9a6f06;
+  --success: #0f8455;
+  --info: var(--signal-deep);
+
+  --trigger: #b5850f;
+  --action: #3566e0;
+  --logic: #7a4fe0;
+  --data: #12935f;
+  --code: #d64b8c;
+
+  --t-exec: #343a4c;
+  --t-string: #d9703a;
+  --t-number: #2f9e92;
+  --t-boolean: #cf4545;
+  --t-user: #4d6ef0;
+  --t-member: #7a5ce6;
+  --t-channel: #2f9e45;
+  --t-message: #b79112;
+  --t-role: #c94a9e;
+  --t-guild: #2a86d6;
+  --t-list: #9a7a34;
+  --t-any: #7a8195;
+}
+
+/* Accent: Ember. --accent fills buttons (white text, 4.6:1), --accent-text carries text and thin UI. */
+:root {
+  --accent: var(--ember-fill);
+  --accent-hover: var(--ember-fill-hover);
+  --accent-fg: var(--white);
+  --accent-text: var(--ember);
+}
+
+[data-theme="light"] {
+  --accent-text: var(--ember-deep);
+}
+
+:root {
+  --accent-soft: color-mix(in srgb, var(--accent) 14%, transparent);
+  --accent-line: color-mix(in srgb, var(--accent-text) 60%, transparent);
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--focus);
+}
+
+/* Component */
+:root {
+  --node-bg: var(--surface);
+  --node-line: var(--line);
+  --node-radius: var(--radius);
+  --port-size: 10px;
+  --edge-width: var(--wire);
+}
+
+[data-density="compact"] {
+  --font-size: var(--text-md);
+  --font-size-sm: var(--text-sm);
+  --font-size-xs: var(--text-xs);
+  --space-3: 10px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 20px;
+  --control-height: 28px;
+  --topbar-height: 46px;
+  --panel-head: 32px;
+}

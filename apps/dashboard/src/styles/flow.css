@@ -1,0 +1,533 @@
+.category-trigger {
+  --category: var(--trigger);
+}
+
+.category-action {
+  --category: var(--action);
+}
+
+.category-logic {
+  --category: var(--logic);
+}
+
+.category-data {
+  --category: var(--data);
+}
+
+.category-code {
+  --category: var(--code);
+}
+
+.react-flow {
+  --xy-background-color: var(--bg);
+  --xy-background-pattern-color: var(--grid-dot);
+  --xy-edge-stroke: var(--muted);
+  --xy-controls-button-background-color: var(--surface);
+  --xy-controls-button-background-color-hover: var(--raised);
+  --xy-controls-button-color: var(--fg);
+  --xy-controls-button-border-color: var(--line);
+  --xy-minimap-background-color: var(--surface);
+  --xy-minimap-mask-background-color: color-mix(in srgb, var(--bg) 60%, transparent);
+  --xy-selection-background-color: color-mix(in srgb, var(--focus) 8%, transparent);
+  --xy-selection-border: 1px dashed var(--focus);
+  --xy-connectionline-stroke: var(--focus);
+  --xy-connectionline-stroke-width: var(--edge-width);
+}
+
+.react-flow__background {
+  mask-image: radial-gradient(ellipse at center, #000 40%, transparent 95%);
+}
+
+.react-flow__connection-path {
+  stroke-linecap: round;
+}
+
+.minimap {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.flow-node {
+  position: relative;
+  min-width: 230px;
+  max-width: 290px;
+  background: var(--node-bg);
+  border: 1px solid var(--node-line);
+  border-radius: var(--node-radius);
+  font-size: var(--text-sm);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--base) var(--ease), border-color var(--fast) var(--ease);
+}
+
+.flow-node:hover {
+  border-color: var(--line-strong);
+}
+
+.flow-node header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px 6px;
+  border-radius: var(--node-radius) var(--node-radius) 0 0;
+}
+
+.flow-node header .node-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.node-brand {
+  display: grid;
+  place-items: center;
+  flex: none;
+  color: var(--muted);
+}
+
+.node-title {
+  font-weight: 600;
+  font-size: var(--text-md);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.node-summary {
+  margin: 0 10px;
+  padding: 3px 7px;
+  border-radius: var(--radius-sm);
+  background: var(--sunken);
+  color: var(--fg-soft);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.node-ports {
+  padding: 6px 0 8px;
+  display: grid;
+  gap: 2px;
+}
+
+.port-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.port-row {
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+
+.port-in {
+  padding-left: 12px;
+}
+
+.port-out {
+  padding-right: 12px;
+  justify-content: flex-end;
+}
+
+.hide-port-labels .port-row span {
+  display: none;
+}
+
+.flow-node .handle {
+  width: var(--port-size);
+  height: var(--port-size);
+  border: 2px solid var(--port, var(--t-any));
+  background: var(--node-bg);
+  transition: background var(--fast) var(--ease), box-shadow var(--fast) var(--ease);
+}
+
+.flow-node .handle.linked {
+  background: var(--port, var(--t-any));
+}
+
+.flow-node .handle-exec {
+  --port: var(--t-exec);
+  border-radius: 2px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.port-out .handle-exec {
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.handle-string {
+  --port: var(--t-string);
+}
+
+.handle-number {
+  --port: var(--t-number);
+}
+
+.handle-boolean {
+  --port: var(--t-boolean);
+}
+
+.handle-user {
+  --port: var(--t-user);
+}
+
+.handle-member {
+  --port: var(--t-member);
+}
+
+.handle-channel {
+  --port: var(--t-channel);
+}
+
+.handle-message {
+  --port: var(--t-message);
+}
+
+.handle-role {
+  --port: var(--t-role);
+}
+
+.handle-guild {
+  --port: var(--t-guild);
+}
+
+.handle-list {
+  --port: var(--t-list);
+}
+
+.flow-node.selected {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 1px var(--focus), var(--shadow);
+}
+
+.flow-node.issue-warning {
+  border-color: color-mix(in srgb, var(--warning) 70%, transparent);
+  border-style: dashed;
+}
+
+.flow-node.issue-error {
+  border-color: var(--danger);
+  border-style: dashed;
+}
+
+.flow-node.active {
+  border-color: var(--live);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--live) 30%, transparent),
+    var(--shadow);
+}
+
+.react-flow__edge-path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: var(--edge-width);
+  transition: stroke-width var(--fast) var(--ease);
+}
+
+.react-flow__edge.edge-string,
+.react-flow__edge.edge-number,
+.react-flow__edge.edge-boolean,
+.react-flow__edge.edge-user,
+.react-flow__edge.edge-member,
+.react-flow__edge.edge-channel,
+.react-flow__edge.edge-message,
+.react-flow__edge.edge-role,
+.react-flow__edge.edge-guild,
+.react-flow__edge.edge-list,
+.react-flow__edge.edge-any {
+  --wire-color: var(--t-any);
+}
+
+.react-flow__edge.edge-string {
+  --wire-color: var(--t-string);
+}
+
+.react-flow__edge.edge-number {
+  --wire-color: var(--t-number);
+}
+
+.react-flow__edge.edge-boolean {
+  --wire-color: var(--t-boolean);
+}
+
+.react-flow__edge.edge-user {
+  --wire-color: var(--t-user);
+}
+
+.react-flow__edge.edge-member {
+  --wire-color: var(--t-member);
+}
+
+.react-flow__edge.edge-channel {
+  --wire-color: var(--t-channel);
+}
+
+.react-flow__edge.edge-message {
+  --wire-color: var(--t-message);
+}
+
+.react-flow__edge.edge-role {
+  --wire-color: var(--t-role);
+}
+
+.react-flow__edge.edge-guild {
+  --wire-color: var(--t-guild);
+}
+
+.react-flow__edge.edge-list {
+  --wire-color: var(--t-list);
+}
+
+.react-flow__edge.edge-any {
+  --wire-color: var(--t-any);
+}
+
+.react-flow__edge.edge-exec {
+  --wire-color: var(--t-exec);
+}
+
+.react-flow__edge .react-flow__edge-path {
+  stroke: var(--wire-color, var(--muted));
+}
+
+.react-flow__edge.edge-data .react-flow__edge-path {
+  opacity: 0.85;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: var(--focus);
+  stroke-width: 3;
+}
+
+.react-flow__edge .react-flow__edge-path.hovered {
+  stroke-width: 3;
+}
+
+.react-flow__edge.live .react-flow__edge-path {
+  stroke: var(--live);
+  stroke-dasharray: 6 10;
+  opacity: 1;
+  animation: trace 0.6s linear infinite;
+}
+
+@keyframes trace {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+
+.react-flow__handle.connectingto:not(.valid) {
+  opacity: 0.35;
+}
+
+.flow-node .react-flow__handle.valid {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--focus) 25%, transparent);
+  transform-origin: center;
+}
+
+.flow-node .handle:not(.handle-exec).valid {
+  transform: translate(-50%, -50%) scale(1.35);
+}
+
+.port-out .handle:not(.handle-exec).valid {
+  transform: translate(50%, -50%) scale(1.35);
+}
+
+.flow-node .handle::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border-radius: 50%;
+}
+
+.flow-node .handle:hover {
+  background: var(--port, var(--t-any));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--port, var(--t-any)) 25%, transparent);
+}
+
+.port-field span {
+  font-style: italic;
+  color: color-mix(in srgb, var(--muted) 80%, transparent);
+}
+
+.node-more {
+  padding: 0 10px 7px;
+  font-size: 10.5px;
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+.port-add {
+  margin-top: 2px;
+}
+
+.flow-node .handle-add {
+  width: 12px;
+  height: 12px;
+  border: 1.5px dashed var(--muted);
+  background: transparent;
+}
+
+.flow-node .handle-add.valid,
+.flow-node .handle-add.connectingto {
+  border-color: var(--accent-text);
+  background: var(--accent-soft);
+}
+
+.add-entry {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 6px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font: 11px var(--font-sans);
+  cursor: pointer;
+}
+
+.add-entry:hover {
+  color: var(--accent-text);
+  background: var(--accent-soft);
+}
+
+.sticky-note {
+  --note: var(--trigger);
+  width: 220px;
+  min-height: 120px;
+  padding: 10px;
+  border-radius: 4px 4px 4px 14px;
+  background: color-mix(in srgb, var(--note) 22%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--note) 55%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.sticky-note.selected {
+  outline: 2px solid var(--note);
+  outline-offset: 2px;
+}
+
+.sticky-note.note-blue {
+  --note: var(--signal);
+}
+
+.sticky-note.note-green {
+  --note: var(--data);
+}
+
+.sticky-note.note-pink {
+  --note: var(--code);
+}
+
+.sticky-note textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--fg);
+  font: 13px/1.45 var(--font-sans);
+  cursor: text;
+}
+
+.edge-hit {
+  fill: none;
+  stroke: transparent;
+  pointer-events: stroke;
+  cursor: pointer;
+}
+
+.edge-conversion {
+  position: absolute;
+  padding: 1px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--muted);
+  font: 10.5px/16px var(--font-mono);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.edge-delete {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--danger);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  pointer-events: all;
+}
+
+.edge-delete:hover {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: var(--white);
+}
+
+.select-box {
+  position: absolute;
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.canvas.drag-pan .react-flow__pane {
+  cursor: grab;
+}
+
+.canvas.drag-select .react-flow__pane,
+.canvas.pressing .react-flow__pane {
+  cursor: crosshair;
+}
+
+.tool:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.tool:disabled:hover {
+  background: none;
+  color: var(--muted);
+}
+
+.edge-value {
+  position: absolute;
+  max-width: 220px;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--info);
+  background: var(--surface);
+  color: var(--fg);
+  font: 11px var(--font-mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 900px) {
+  .runs-layout,
+  .step-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

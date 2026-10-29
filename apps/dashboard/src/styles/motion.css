@@ -1,0 +1,348 @@
+/* Loading */
+
+.loader {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  animation: fade-in var(--base) var(--ease) backwards;
+  animation-delay: 120ms;
+}
+
+.loader-track {
+  fill: var(--line-strong);
+}
+
+.loader-wire {
+  fill: var(--fg);
+  clip-path: inset(0 100% 0 0);
+  animation: wire-draw 1.4s var(--ease) infinite;
+}
+
+.loader-port {
+  fill: var(--ember);
+  transform-origin: 37px 118px;
+  animation: port-beat 1.4s var(--ease) infinite;
+}
+
+.loader-port-glow {
+  fill: var(--ember);
+  opacity: 0;
+  transform-origin: 37px 118px;
+  animation: port-ring 1.4s var(--ease) infinite;
+}
+
+.loader-label {
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+@keyframes wire-draw {
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+  55%,
+  75% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes port-beat {
+  0%,
+  40% {
+    transform: scale(1);
+  }
+  55% {
+    transform: scale(1.18);
+  }
+  70%,
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes port-ring {
+  50% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
+.skeleton-card {
+  animation: rise-in var(--base) var(--ease) backwards;
+}
+
+.skeleton {
+  display: block;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, var(--raised) 0%, var(--hover) 50%, var(--raised) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+
+.skeleton-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+  flex: none;
+}
+
+.skeleton-lines {
+  flex: 1;
+  gap: 6px;
+}
+
+.skeleton-line {
+  height: 10px;
+  width: 100%;
+}
+
+.skeleton-line.short {
+  width: 55%;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+/* Pages */
+
+.page > * {
+  animation: rise-in var(--base) var(--ease) backwards;
+}
+
+.page > :nth-child(2) {
+  animation-delay: 40ms;
+}
+
+.page > :nth-child(n + 3) {
+  animation-delay: 80ms;
+}
+
+.grid > .project-card,
+.list > .project-card {
+  animation: rise-in var(--base) var(--ease) backwards;
+}
+
+.grid > .project-card:nth-child(2),
+.list > .project-card:nth-child(2) {
+  animation-delay: 40ms;
+}
+
+.grid > .project-card:nth-child(3),
+.list > .project-card:nth-child(3) {
+  animation-delay: 80ms;
+}
+
+.grid > .project-card:nth-child(n + 4),
+.list > .project-card:nth-child(n + 4) {
+  animation-delay: 120ms;
+}
+
+.project-card:hover {
+  transform: translateY(-1px);
+}
+
+.project-card {
+  transition: border-color var(--fast) var(--ease), box-shadow var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+
+.editor {
+  animation: fade-in var(--base) var(--ease);
+}
+
+/* Panels */
+
+.view-swap,
+.panel-body,
+.inspector > * {
+  animation: list-in var(--base) var(--ease) backwards;
+}
+
+.side-panel,
+.inspector {
+  animation: panel-in var(--base) var(--ease);
+}
+
+.panel-bottom {
+  animation: panel-up var(--base) var(--ease);
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes panel-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.notice {
+  animation: notice-in var(--base) var(--ease);
+}
+
+@keyframes notice-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+.panel-bottom .tab.active::after,
+.activity.active::before {
+  animation: grow-in var(--base) var(--ease);
+}
+
+@keyframes grow-in {
+  from {
+    transform: scaleX(0.3);
+    opacity: 0;
+  }
+}
+
+.activity.active::before {
+  animation-name: grow-y;
+}
+
+@keyframes grow-y {
+  from {
+    transform: scaleY(0.2);
+    opacity: 0;
+  }
+}
+
+.log,
+.problem,
+.run-item,
+.network-row {
+  animation: list-in var(--fast) var(--ease) backwards;
+}
+
+/* Canvas */
+
+.flow-node {
+  animation: node-in var(--base) var(--ease) backwards;
+}
+
+.sticky-note {
+  animation: node-in var(--base) var(--ease) backwards;
+}
+
+@keyframes node-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+.react-flow__edge {
+  animation: fade-in var(--base) var(--ease) backwards;
+  animation-delay: 80ms;
+}
+
+.react-flow__connection-path {
+  stroke-dasharray: 6 8;
+  animation: trace 0.6s linear infinite;
+}
+
+.flow-node.active::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  animation: node-pulse 0.9s var(--ease);
+}
+
+@keyframes node-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--live) 55%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+
+.flow-node .handle.linked:not(.handle-exec) {
+  animation: port-fill var(--base) var(--ease);
+}
+
+@keyframes port-fill {
+  from {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--port, var(--t-any)) 35%, transparent);
+  }
+}
+
+.canvas-empty {
+  animation: rise-in var(--base) var(--ease) backwards;
+  animation-delay: 120ms;
+}
+
+.canvas-toolbar {
+  animation: panel-up var(--base) var(--ease) backwards;
+  animation-delay: 80ms;
+}
+
+/* Feedback */
+
+.save {
+  transition: color var(--fast) var(--ease), opacity var(--fast) var(--ease);
+}
+
+.save-saving svg {
+  animation: spin 0.9s linear infinite;
+}
+
+.save-saved svg {
+  animation: pop var(--base) var(--ease);
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+  }
+}
+
+.run-state {
+  transition: color var(--base) var(--ease), border-color var(--base) var(--ease), background var(--base) var(--ease);
+}
+
+.run-state.is-running {
+  background: color-mix(in srgb, var(--live) 8%, transparent);
+}
+
+.button.primary:not(:disabled) .lucide-play {
+  transition: transform var(--fast) var(--ease);
+}
+
+.button.primary:hover .lucide-play {
+  transform: translateX(1px) scale(1.08);
+}
+
+.activity-badge {
+  animation: pop var(--base) var(--ease);
+}
+
+.toggle-chevron,
+.group-title svg {
+  transition: transform var(--base) var(--ease);
+}

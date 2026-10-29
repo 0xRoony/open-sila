@@ -1,0 +1,46 @@
+{
+  "name": "open-sila",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Open-source visual builder for Discord and Telegram bots.",
+  "license": "MIT",
+  "homepage": "https://github.com/0xRoony/open-sila#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xRoony/open-sila.git"
+  },
+  "bugs": "https://github.com/0xRoony/open-sila/issues",
+  "keywords": [
+    "discord",
+    "telegram",
+    "bot",
+    "bot-builder",
+    "visual-programming",
+    "no-code",
+    "low-code",
+    "discord.js",
+    "grammy",
+    "flow"
+  ],
+  "type": "module",
+  "workspaces": [
+    "packages/core",
+    "packages/server",
+    "apps/dashboard"
+  ],
+  "scripts": {
+    "build": "npm run build -w @open-sila/core && npm run build -w @open-sila/server && npm run build -w @open-sila/dashboard",
+    "start": "node packages/server/dist/cli.js start",
+    "dev:server": "npm run dev -w @open-sila/server",
+    "dev:dashboard": "npm run dev -w @open-sila/dashboard",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm test -w @open-sila/core && npm test -w @open-sila/server"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "allowScripts": {
+    "better-sqlite3-multiple-ciphers": true,
+    "esbuild": true
+  }
+}

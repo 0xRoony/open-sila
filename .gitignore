@@ -1,0 +1,9 @@
+node_modules/
+dist/
+packages/server/public/
+*.log
+.env
+.open-sila/
+.claude/
+coverage/
+*.tsbuildinfo

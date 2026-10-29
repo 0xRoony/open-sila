@@ -1,0 +1,47 @@
+{
+  "name": "@open-sila/core",
+  "version": "0.1.0",
+  "description": "Flow schema, node catalog and code generator for Open Sila.",
+  "license": "MIT",
+  "homepage": "https://github.com/0xRoony/open-sila#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xRoony/open-sila.git",
+    "directory": "packages/core"
+  },
+  "bugs": "https://github.com/0xRoony/open-sila/issues",
+  "keywords": [
+    "discord",
+    "telegram",
+    "bot",
+    "code-generator",
+    "flow"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "typescript": "~5.9.3"
+  }
+}

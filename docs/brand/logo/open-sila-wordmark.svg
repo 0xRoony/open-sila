@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-9 -57 800 202" width="800" height="202">
+  <title>Open Sila</title>
+  <g fill="none" stroke="#000000" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="48" cy="48" r="39"/>
+    <path d="M127 136V9M127 48A39 39 0 1 0 205 48A39 39 0 1 0 127 48"/>
+    <path d="M243 48H321A39 39 0 1 0 309.6 75.6"/>
+    <path d="M361 87V9M361 48A39 39 0 0 1 439 48V87"/>
+    <path d="M570.4 21.8A28 19.5 0 1 0 545 48A28 19.5 0 1 1 519.6 74.2"/>
+    <path d="M615 87V9"/>
+    <path d="M657 87V-48"/>
+    <path d="M773 9V87M773 48A39 39 0 1 0 695 48A39 39 0 1 0 773 48"/>
+  </g>
+  <circle fill="#000000" cx="615" cy="-30" r="12"/>
+</svg>

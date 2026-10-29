@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1127 256" width="1127" height="256">
+  <title>Open Sila</title>
+  <g transform="translate(-2.25 -19.4) scale(1.15)">
+  <path fill="#0E1016" fill-rule="evenodd" d="M159 58H199A42 42 0 0 1 199 142H159A42 42 0 0 1 159 58ZM159 82H199A18 18 0 0 1 199 118H159A18 18 0 0 1 159 82Z"/>
+  <path fill="#0E1016" d="M25 132V136A64 64 0 0 0 153 136V129A12 12 0 0 0 129 129V136A40 40 0 0 1 49 136V132Z"/>
+  <circle fill="#FF6A3D" cx="37" cy="118" r="22"/>
+  </g>
+  <g transform="translate(330 81)">
+  <g fill="none" stroke="#0E1016" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="48" cy="48" r="39"/>
+    <path d="M127 136V9M127 48A39 39 0 1 0 205 48A39 39 0 1 0 127 48"/>
+    <path d="M243 48H321A39 39 0 1 0 309.6 75.6"/>
+    <path d="M361 87V9M361 48A39 39 0 0 1 439 48V87"/>
+    <path d="M570.4 21.8A28 19.5 0 1 0 545 48A28 19.5 0 1 1 519.6 74.2"/>
+    <path d="M615 87V9"/>
+    <path d="M657 87V-48"/>
+    <path d="M773 9V87M773 48A39 39 0 1 0 695 48A39 39 0 1 0 773 48"/>
+  </g>
+  <circle fill="#FF6A3D" cx="615" cy="-30" r="12"/>
+  </g>
+</svg>

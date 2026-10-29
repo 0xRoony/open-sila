@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>Open Sila</title>
+  <path fill="#FFFFFF" fill-rule="evenodd" d="M159 55H199A45 45 0 0 1 199 145H159A45 45 0 0 1 159 55ZM159 85H199A15 15 0 0 1 199 115H159A15 15 0 0 1 159 85Z"/>
+  <path fill="#FFFFFF" d="M22 132V136A67 67 0 0 0 156 136V131A15 15 0 0 0 126 131V136A37 37 0 0 1 52 136V132Z"/>
+  <circle fill="#FF6A3D" cx="37" cy="116" r="25"/>
+</svg>

@@ -1,0 +1,64 @@
+{
+  "name": "@open-sila/server",
+  "version": "0.1.0",
+  "description": "Local server for Open Sila: dashboard, REST API, MCP endpoint and bot runner.",
+  "license": "MIT",
+  "homepage": "https://github.com/0xRoony/open-sila#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xRoony/open-sila.git",
+    "directory": "packages/server"
+  },
+  "bugs": "https://github.com/0xRoony/open-sila/issues",
+  "keywords": [
+    "discord",
+    "telegram",
+    "bot",
+    "bot-builder",
+    "visual-programming",
+    "no-code",
+    "low-code",
+    "discord.js",
+    "grammy",
+    "flow",
+    "mcp"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "bin": {
+    "sila": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "public"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/cli.ts start",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/static": "^8.2.0",
+    "@fastify/websocket": "^11.2.0",
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "@open-sila/core": "0.1.0",
+    "better-sqlite3-multiple-ciphers": "^12.4.1",
+    "discord.js": "^14.21.0",
+    "dotenv": "^16.4.5",
+    "fastify": "^5.6.1",
+    "grammy": "^1.36.0",
+    "jszip": "^3.10.1",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.18.0",
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.20.6",
+    "typescript": "~5.9.3"
+  }
+}
